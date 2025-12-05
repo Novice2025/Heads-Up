@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RealTalk Daby (Corporate Edition) - Your Interaction</title>
+    <meta name="description" content="RealTalk Daby: Interact with DabyTalk, your personal AI tutor, for instant feedback on your English speech.">
+    <meta name="keywords" content="corporate English, DabyTalk, AI tutor, speech recognition, English feedback, conversation practice, RealTalk Daby, ElevenLabs">
+    <meta name="author" content="@Daby 2025">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Optional: Favicon -->
+    <!-- <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"> -->
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="site-title gradient-text">RealTalk Daby <span class="edition-tag">(Corporate Edition)</span></h1>
+            <p class="site-slogan">Communication that Takes Off. 🚀</p>
+            <p class="site-slogan">Transform your Corporate English into your greatest asset. Effortlessly. Impactfully. ✨</p>
+            <p class="site-slogan">No matter your current English level, we have a solution for you.</p>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="animated-button">Home</a></li>
+                    <li><a href="meu_ingles_inseguro.html" class="animated-button">My Insecure English</a></li>
+                    <li><a href="progressive.html" class="animated-button">Progressive</a></li>
+                    <li><a href="exercises.html" class="animated-button">Exercises</a></li>
+                    <li><a href="final_decision.html" class="animated-button">Final Decision</a></li>
+                    <li><a href="your_interaction.html" class="animated-button current-page">Your Interaction</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card daby-talk-section">
+            <h2>Your Interaction with DabyTalk ✨ Feedback ready!</h2>
+            <p class="section-description">
+                Practice your English speaking and receive instant feedback from your AI tutor, DabyTalk.
+                Click "Start Recording," speak your sentence or paragraph, and watch the transcription and corrections appear in real-time.
+            </p>
+
+            <div class="daby-talk-controls">
+                <button id="startRecordingBtn" class="animated-button primary-button">🎤 Start Recording</button>
+                <button id="stopRecordingBtn" class="animated-button secondary-button" disabled>⏹️ Stop Recording</button>
+            </div>
+            <p id="recordingStatus" class="status-message"></p>
+
+            <div class="daby-talk-display">
+                <div class="user-transcript-box card">
+                    <h3>Your Speech (Transcription):</h3>
+                    <div id="userTranscript" class="transcript-content">
+                        <p class="placeholder-text">Your spoken words will appear here...</p>
+                    </div>
+                </div>
+
+                <div class="daby-feedback-box card">
+                    <h3>DabyTalk Feedback:</h3>
+                    <div id="dabyFeedback" class="feedback-content">
+                        <p class="placeholder-text">DabyTalk's corrections and explanations will appear here...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="daby-talk-actions">
+                <button id="emailSummaryBtn" class="animated-button tertiary-button">📧 Email Summary</button>
+                <button id="newConversationBtn" class="animated-button secondary-button">🔄 New Conversation</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 RealTalk Daby (Corporate Edition). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
