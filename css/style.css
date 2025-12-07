@@ -91,7 +91,7 @@ section h2, section h3 {
     margin-bottom: 20px;
 }
 
-section p, section ul li, section strong { /* Added strong to apply gradient */
+section p, section ul li, section strong, section label, section input, section textarea, section button { /* Added more elements for gradient */
     /* Mixed gradient light colors for other words (Pristine Sea of Mauritius) */
     background: linear-gradient(to right, #a1c4fd, #c2e9fb, #8fd3f4, #a6c0fe); /* Light blues/purples */
     -webkit-background-clip: text;
@@ -100,15 +100,70 @@ section p, section ul li, section strong { /* Added strong to apply gradient */
     color: transparent; /* Fallback */
 }
 
+/* Specific overrides for input/textarea to make them readable */
+section input, section textarea {
+    -webkit-text-fill-color: #e0e0e0; /* Override gradient for input text */
+    color: #e0e0e0; /* Fallback */
+    background-color: #0f3460; /* Darker background for input fields */
+    border: 1px solid #3498db;
+    padding: 10px;
+    border-radius: 5px;
+    width: calc(100% - 22px); /* Account for padding and border */
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
 section ul {
-    list-style: disc;
-    margin-left: 20px;
+    list-style: none; /* Remove default list style for custom numbering */
+    margin-left: 0;
     padding-left: 0;
 }
 
-section ul li {
+/* Custom numbering for lists */
+section ul.numbered-list li {
+    counter-increment: list-counter;
     margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
 }
+
+section ul.numbered-list li::before {
+    content: counter(list-counter) ". ";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    background: linear-gradient(to right, #ff2400, #ff8c00, #ffffff, #00ff00); /* Headline gradient for numbers */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback */
+}
+
+section ol.alpha-list {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+section ol.alpha-list li {
+    counter-increment: alpha-counter;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+section ol.alpha-list li::before {
+    content: counter(alpha-counter, lower-alpha) ". ";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    background: linear-gradient(to right, #ff2400, #ff8c00, #ffffff, #00ff00); /* Headline gradient for numbers */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback */
+}
+
 
 /* DabyTalk specific styles */
 .daby-talk-container {
@@ -138,68 +193,100 @@ section ul li {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    color: #fff; /* White text for buttons */
+    background: linear-gradient(45deg, #ff2400, #ff8c00); /* Dynamic button gradient */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
 
-.daby-talk-controls button:first-child { /* Start Recording */
-    background-color: #28a745; /* Green */
+.daby-talk-controls button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+    background: linear-gradient(45deg, #ff8c00, #ff2400); /* Reverse gradient on hover */
 }
 
-.daby-talk-controls button:first-child:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
+/* Specific button colors */
+#startRecording {
+    background: linear-gradient(45deg, #28a745, #218838); /* Green gradient */
+}
+#startRecording:hover {
+    background: linear-gradient(45deg, #218838, #28a745);
+}
+#stopRecording {
+    background: linear-gradient(45deg, #dc3545, #c82333); /* Red gradient */
+}
+#stopRecording:hover {
+    background: linear-gradient(45deg, #c82333, #dc3545);
+}
+#emailSummary, #newConversation {
+    background: linear-gradient(45deg, #007bff, #0056b3); /* Blue gradient */
+}
+#emailSummary:hover, #newConversation:hover {
+    background: linear-gradient(45deg, #0056b3, #007bff);
 }
 
-.daby-talk-controls button:last-child { /* Stop Recording */
-    background-color: #dc3545; /* Red */
-}
-
-.daby-talk-controls button:last-child:hover {
-    background-color: #c82333;
-    transform: translateY(-2px);
-}
-
-.daby-talk-output {
-    background-color: #1a1a2e;
+/* Exercise specific styles */
+.exercise-item {
+    margin-bottom: 30px;
+    padding: 20px;
     border: 1px solid #0f3460;
+    border-radius: 8px;
+    background-color: #2c3e50;
+}
+
+.exercise-item label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.exercise-item input[type="text"],
+.exercise-item textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #3498db;
     border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 20px;
-    min-height: 80px;
+    background-color: #0f3460;
     color: #e0e0e0;
+    -webkit-text-fill-color: #e0e0e0; /* Ensure text is visible */
 }
 
-.daby-talk-output p {
-    margin: 5px 0;
-    background: linear-gradient(to right, #a1c4fd, #c2e9fb, #8fd3f4, #a6c0fe); /* Apply gradient to output text */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent; /* Fallback */
-}
-
-.daby-talk-actions {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.daby-talk-actions button {
+.exercise-item button.check-answer {
     padding: 10px 20px;
     font-size: 0.9em;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     color: #fff;
-    background-color: #007bff; /* Blue */
+    background: linear-gradient(45deg, #17a2b8, #138496); /* Info blue gradient */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
 
-.daby-talk-actions button:hover {
-    background-color: #0056b3;
+.exercise-item button.check-answer:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+    background: linear-gradient(45deg, #138496, #17a2b8);
 }
 
+.exercise-feedback {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: none; /* Hidden by default */
+}
+
+.exercise-feedback.correct {
+    background-color: #28a745; /* Green */
+    color: #fff;
+}
+
+.exercise-feedback.incorrect {
+    background-color: #dc3545; /* Red */
+    color: #fff;
+}
 
 /* Footer Styles */
 footer {

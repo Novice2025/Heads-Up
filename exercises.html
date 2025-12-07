@@ -25,10 +25,68 @@
 
     <main class="container">
         <section id="exercises">
-            <h2>Practice with "Heads-Up"</h2>
-            <p>Here you will find interactive exercises to practice using "just to give you a heads up" and its variations in different corporate and casual contexts.</p>
-            <p>Stay tuned for updates!</p>
-            <!-- Future exercises will go here -->
+            <h2>Practice with "Heads-Up" 🧠</h2>
+            <p>Test your understanding of "just to give you a heads-up" and its variations with these interactive exercises. Choose the best option, fill in the blanks, or translate to ensure you're ready for real-world communication!</p>
+
+            <!-- Exercise 1: Fill in the Blanks -->
+            <div class="exercise-item">
+                <h3>1. Fill in the Blanks 📝</h3>
+                <p>Complete the sentences with the most appropriate "heads-up" phrase.</p>
+                <label for="q1">"Just a quick ________, the client meeting has been moved to Thursday."</label>
+                <input type="text" id="q1" data-answer="heads-up">
+                <button class="check-answer" onclick="checkAnswer('q1')">Check Answer</button>
+                <div class="exercise-feedback" id="feedback-q1"></div>
+            </div>
+
+            <!-- Exercise 2: Multiple Choice -->
+            <div class="exercise-item">
+                <h3>2. Choose the Best Option ✅</h3>
+                <p>Which phrase is most suitable for a very informal text message to a close colleague about a minor delay?</p>
+                <label>
+                    <input type="radio" name="q2" value="a"> Just a courtesy heads-up
+                </label><br>
+                <label>
+                    <input type="radio" name="q2" value="b"> h/u
+                </label><br>
+                <label>
+                    <input type="radio" name="q2" value="c"> Wanted to flag this for you
+                </label><br>
+                <label>
+                    <input type="radio" name="q2" value="d"> Giving you a heads-up ahead of time
+                </label><br>
+                <button class="check-answer" onclick="checkAnswer('q2', 'b')">Check Answer</button>
+                <div class="exercise-feedback" id="feedback-q2"></div>
+            </div>
+
+            <!-- Exercise 3: Translation (English to Portuguese) -->
+            <div class="exercise-item">
+                <h3>3. Translate to Portuguese 🇧🇷</h3>
+                <p>Translate the following sentence into natural Portuguese, using an appropriate equivalent for "heads-up".</p>
+                <p><strong>"Just a quick heads-up, the report is due by end of day."</strong></p>
+                <textarea id="q3" rows="3" data-answer="Só um aviso rápido, o relatório deve ser entregue até o final do dia."></textarea>
+                <button class="check-answer" onclick="checkAnswer('q3')">Check Answer</button>
+                <div class="exercise-feedback" id="feedback-q3"></div>
+            </div>
+
+            <!-- Exercise 4: Write in a Situation -->
+            <div class="exercise-item">
+                <h3>4. Write in a Situation ✍️</h3>
+                <p>You need to inform your team that the coffee machine is broken and maintenance will take a few hours. Write a short, polite message using a "heads-up" phrase.</p>
+                <textarea id="q4" rows="5" data-answer="Hey team, just a heads-up that the coffee machine is currently out of order. Maintenance is on the way and expects to have it fixed in a few hours. Apologies for the inconvenience!"></textarea>
+                <button class="check-answer" onclick="checkAnswer('q4')">Check Answer</button>
+                <div class="exercise-feedback" id="feedback-q4"></div>
+            </div>
+
+            <!-- Exercise 5: Translation (Portuguese to English) -->
+            <div class="exercise-item">
+                <h3>5. Translate to English 🇬🇧</h3>
+                <p>Translate the following sentence into natural English, using an appropriate "heads-up" phrase.</p>
+                <p><strong>"Só para te avisar, o cliente vai ligar amanhã de manhã."</strong></p>
+                <textarea id="q5" rows="3" data-answer="Just a heads-up, the client will call tomorrow morning."></textarea>
+                <button class="check-answer" onclick="checkAnswer('q5')">Check Answer</button>
+                <div class="exercise-feedback" id="feedback-q5"></div>
+            </div>
+
         </section>
     </main>
 
